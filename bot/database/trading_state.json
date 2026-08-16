@@ -1,0 +1,85 @@
+{
+  "isBotRunning": true,
+  "lockedPairs": [
+    "BLUAIUSDT",
+    "BTRUSDT"
+  ],
+  "activePositions": [
+    {
+      "id": 1786478106222003,
+      "symbol": "BTRUSDT",
+      "side": "buy",
+      "entryPrice": 0.03267,
+      "currentPrice": 0.03286,
+      "quantity": 612.1824,
+      "takeProfitType": "candle_close_or_manual",
+      "candleCloseTime": 1786478400000,
+      "dailyOpen": 0.02146,
+      "openedAt": "2026-08-11T19:55:06.222Z",
+      "unrealizedPnlUsdt": 0.12,
+      "unrealizedPnlPct": 0.58,
+      "exchange": "Binance",
+      "isLive": false,
+      "fundingRate": 0.00031982,
+      "fundingRatePct": 0.032,
+      "nextFundingTime": 1786478400000,
+      "estimatedFundingFeeUsdt": 0.0064
+    }
+  ],
+  "tradeHistory": [
+    {
+      "id": 1786478100814002,
+      "symbol": "BLUAIUSDT",
+      "side": "sell",
+      "entryPrice": 0.013,
+      "exitPrice": 0.013217,
+      "quantity": 1538.4615,
+      "pnlPct": -1.67,
+      "pnlUsdt": -0.33,
+      "dailyOpen": 0.027993,
+      "openedAt": "2026-08-11T19:53:46.931Z",
+      "closedAt": "2026-08-11T19:55:00.814Z",
+      "durationSec": 73,
+      "exchange": "Binance",
+      "isLive": false,
+      "exitReason": "CANDLE_CLOSE"
+    }
+  ],
+  "botLogs": [
+    "[7:55:06 PM] [SCANNER QUEUED] VELVETUSDT crossed 20.0% threshold (+48.34%) but max active position limit (1/1 active) reached. Waiting for current position to close.",
+    "[7:55:06 PM] [AUTOMATIC SIGNAL TRIGGERED] BTRUSDT crossed 20.0% threshold (+52.24%). Opened PAPER BUY position ($1.00 margin @ 20x) @ $0.0327. Funding Rate: +0.0311%.",
+    "[7:55:06 PM] [LIVE BINANCE ORDER FAILED] Binance Live Order Error (401): Invalid API-key, IP, or permissions for action, request ip: 34.34.246.122. Falling back to paper trade tracking.",
+    "[7:55:05 PM] [SCANNER ALERT] BLUAIUSDT crossed 20% threshold (-52.68%) but pair is currently LOCKED from re-entry.",
+    "[7:55:00 PM] [AUTOMATIC CANDLE CLOSE TAKE PROFIT - BINANCE] Closed BLUAIUSDT position at Candle Close @ $0.0132. Realized PnL: -1.67% ($-0.33 USDT). Pair remains locked.",
+    "[7:54:40 PM] [SCANNER QUEUED] BTRUSDT crossed 20.0% threshold (+52.66%) but max active position limit (1/1 active) reached. Waiting for current position to close.",
+    "[7:54:35 PM] [SCANNER QUEUED] BTRUSDT crossed 20.0% threshold (+52.42%) but max active position limit (1/1 active) reached. Waiting for current position to close.",
+    "[7:54:30 PM] [SCANNER QUEUED] BTRUSDT crossed 20.0% threshold (+52.66%) but max active position limit (1/1 active) reached. Waiting for current position to close.",
+    "[7:54:26 PM] [SCANNER QUEUED] BTRUSDT crossed 20.0% threshold (+53.31%) but max active position limit (1/1 active) reached. Waiting for current position to close.",
+    "[7:54:20 PM] [SCANNER QUEUED] BTRUSDT crossed 20.0% threshold (+53.31%) but max active position limit (1/1 active) reached. Waiting for current position to close.",
+    "[7:54:15 PM] [SCANNER QUEUED] BTRUSDT crossed 20.0% threshold (+53.22%) but max active position limit (1/1 active) reached. Waiting for current position to close.",
+    "[7:53:47 PM] [TEST] OK",
+    "[7:53:47 PM] [TEST] ",
+    "[7:53:47 PM] [TEST] Ran 14 tests in 0.014s",
+    "[7:53:47 PM] [TEST] ----------------------------------------------------------------------",
+    "[7:53:47 PM] [TEST] ..............",
+    "[7:53:47 PM] [TEST] ",
+    "[7:53:47 PM] [TEST] 2026-08-11 19:53:46 | INFO     | trading_bot | database.py:144 | Database closed",
+    "[7:53:47 PM] [TEST] 2026-08-11 19:53:46 | INFO     | trading_bot | database.py:138 | Database connected: /tmp/tmprvyt_r6y/test_trading.db",
+    "[7:53:46 PM] [SCANNER QUEUED] BTRUSDT crossed 20.0% threshold (+53.36%) but max active position limit (1/1 active) reached. Waiting for current position to close.",
+    "[7:53:46 PM] [AUTOMATIC SIGNAL TRIGGERED] BLUAIUSDT crossed 20.0% threshold (-53.56%). Opened PAPER SELL position ($1.00 margin @ 20x) @ $0.0130. Funding Rate: +0.0535%.",
+    "[7:53:46 PM] [LIVE BINANCE ORDER FAILED] Binance Live Order Error (401): Invalid API-key, IP, or permissions for action, request ip: 34.34.246.122. Falling back to paper trade tracking.",
+    "[7:53:46 PM] Running automated test suite (pytest / unittest)...",
+    "[7:53:45 PM] Multi-Exchange Automated Market Scanner active. Scanning Binance, Bybit, OKX, Gate.io, KuCoin, Bitget, MEXC 24/7 for pairs crossing 20.0% threshold.",
+    "[7:53:45 PM] System initialized. Bot state: RUNNING.",
+    "[7:53:45 PM] SQLite, Disk & Firebase Firestore Persistence connected."
+  ],
+  "lastScanTime": "2026-08-11T19:57:25.563Z",
+  "lastTestStatus": {
+    "lastRun": "2026-08-11T19:53:47.026Z",
+    "passed": true,
+    "output": "2026-08-11 19:53:46 | INFO     | trading_bot | database.py:138 | Database connected: /tmp/tmprvyt_r6y/test_trading.db\n2026-08-11 19:53:46 | INFO     | trading_bot | database.py:144 | Database closed\n\n..............\n----------------------------------------------------------------------\nRan 14 tests in 0.014s\n\nOK",
+    "totalTests": 14,
+    "isRunning": false
+  },
+  "savedAt": "2026-08-11T19:57:25.810Z"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Cryptocurrency Trading Bot",
+  "description": "A modular, asynchronous cryptocurrency trading bot system for Binance USDM Futures with real-time market scanner, SQLite persistence, Telegram alerts, and web control dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

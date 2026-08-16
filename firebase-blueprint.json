@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "Position": {
+      "title": "Position",
+      "description": "Active open trading position managed by the bot",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number", "description": "Unique position ID" },
+        "symbol": { "type": "string", "maxLength": 32, "description": "Trading pair symbol e.g. SOLUSDT" },
+        "side": { "type": "string", "enum": ["buy", "sell"], "description": "Order side" },
+        "entryPrice": { "type": "number", "description": "Entry price in USDT" },
+        "currentPrice": { "type": "number", "description": "Current mark price in USDT" },
+        "quantity": { "type": "number", "description": "Asset position quantity" },
+        "takeProfitPrice": { "type": "number", "description": "Auto exit target price" },
+        "dailyOpen": { "type": "number", "description": "00:00 UTC daily open benchmark price" },
+        "openedAt": { "type": "string", "description": "ISO timestamp when position opened" },
+        "unrealizedPnlUsdt": { "type": "number", "description": "Unrealized profit/loss in USDT" },
+        "unrealizedPnlPct": { "type": "number", "description": "Unrealized percentage change" },
+        "exchange": { "type": "string", "maxLength": 32, "description": "Target exchange name" }
+      },
+      "required": ["symbol", "side", "entryPrice", "currentPrice", "quantity", "openedAt"]
+    },
+    "TradeHistoryItem": {
+      "title": "TradeHistoryItem",
+      "description": "Completed trade record after take profit execution",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number", "description": "Unique trade ID" },
+        "symbol": { "type": "string", "maxLength": 32, "description": "Trading pair symbol" },
+        "side": { "type": "string", "enum": ["buy", "sell"], "description": "Order side" },
+        "entryPrice": { "type": "number", "description": "Entry price" },
+        "exitPrice": { "type": "number", "description": "Execution exit price" },
+        "quantity": { "type": "number", "description": "Position size" },
+        "pnlPct": { "type": "number", "description": "Realized PnL percentage" },
+        "pnlUsdt": { "type": "number", "description": "Realized PnL in USDT" },
+        "dailyOpen": { "type": "number", "description": "00:00 UTC benchmark" },
+        "openedAt": { "type": "string", "description": "ISO timestamp opened" },
+        "closedAt": { "type": "string", "description": "ISO timestamp closed" },
+        "durationSec": { "type": "number", "description": "Trade duration in seconds" },
+        "exchange": { "type": "string", "maxLength": 32, "description": "Exchange name" }
+      },
+      "required": ["symbol", "side", "entryPrice", "exitPrice", "pnlUsdt", "closedAt"]
+    },
+    "BotStatus": {
+      "title": "BotStatus",
+      "description": "Global operational state of the trading bot",
+      "type": "object",
+      "properties": {
+        "isRunning": { "type": "boolean", "description": "Whether bot is active" },
+        "testnet": { "type": "boolean", "description": "Testnet mode flag" },
+        "strategy": { "type": "string", "description": "Active strategy identifier" },
+        "lastScan": { "type": "string", "description": "Last market scan timestamp" }
+      },
+      "required": ["isRunning"]
+    }
+  },
+  "firestore": {
+    "/positions/{positionId}": {
+      "schema": { "$ref": "#/entities/Position" },
+      "description": "Collection of active open trading positions"
+    },
+    "/history/{tradeId}": {
+      "schema": { "$ref": "#/entities/TradeHistoryItem" },
+      "description": "Collection of completed trade logs"
+    },
+    "/status/current": {
+      "schema": { "$ref": "#/entities/BotStatus" },
+      "description": "Current bot operational status document"
+    }
+  }
+}
